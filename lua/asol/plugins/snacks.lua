@@ -10,7 +10,13 @@ return {
     dim = { enabled = true },
     git = { enabled = true },
     indent = { enabled = true },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+      matcher = { history_bonus = true, },
+      sort = {
+        fields = { "history:desc", "score:desc", "#text", "idx" },
+      },
+    },
     quickfile = { enabled = true },
     rename = { enabled = true },
     scope = { enabled = true },
