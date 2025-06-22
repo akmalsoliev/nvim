@@ -20,11 +20,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
     local bufnr = args.buf
 
-    -- Add the keymap for formatting (buffer-local)
-    vim.keymap.set('n', '<leader>fo', function()
-      vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 1000 })
-    end, { buffer = bufnr, desc = "LSP: Format buffer" })
-
     -- Auto-format ("lint") on save.
     if not client:supports_method('textDocument/willSaveWaitUntil')
         and client:supports_method('textDocument/formatting') then

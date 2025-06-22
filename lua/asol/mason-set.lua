@@ -4,9 +4,9 @@ local masonConfig = {
   "lua-language-server", -- lua
   "stylua",              -- lua
   "rust-analyzer",       --rust
-  "fixjson",             -- json
   "terraform-ls",        --terraform
-  "prettier",            --js, ts, json, markdown
+  "prettier",            --js, ts, json, markdown, json
+  "yamlfmt",             -- yaml
 }
 
 require("mason").setup()
