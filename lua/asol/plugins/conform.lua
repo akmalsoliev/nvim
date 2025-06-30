@@ -1,5 +1,5 @@
 return {
-  'stevearc/conform.nvim',
+  "stevearc/conform.nvim",
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
   keys = {
@@ -15,22 +15,21 @@ return {
   },
   opts = {
     formatters_by_ft = {
-      lua = { "stylua", },
-      javascript = { "prettier", },
-      typescript = { "prettier", },
-      markdown = { "prettier", },
-      json = { "prettier", },
-      yaml = { "yamlfmt", },
+      lua = { "stylua" },
+      javascript = { "prettier" },
+      typescript = { "prettier" },
+      markdown = { "prettier" },
+      json = { "prettier" },
+      yaml = { "yamlfmt" },
     },
     formatters = {
       yamlfmt = {
         prepend_args = { "-global_conf" },
-      }
+      },
     },
     format_on_save = { timeout_ms = 500 },
     default_format_opts = {
       lsp_format = "fallback",
     },
-
   },
 }
