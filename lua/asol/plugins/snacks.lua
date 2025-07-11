@@ -12,7 +12,7 @@ return {
     indent = { enabled = true },
     picker = {
       enabled = true,
-      matcher = { history_bonus = true, },
+      matcher = { history_bonus = true },
       sort = {
         fields = { "history:desc", "score:desc", "#text", "idx" },
       },
@@ -26,6 +26,7 @@ return {
     words = { enabled = true },
     notifier = snacks_config.notifier,
     notify = { enabled = true },
+    styles = snacks_config.styles,
   },
   keys = snacks_config.keys,
   init = snacks_config.configuration,

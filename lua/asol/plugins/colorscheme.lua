@@ -11,6 +11,5 @@ return {
     -- This code runs after the plugin is loaded
     require("catppuccin").setup(opts)
     vim.cmd.colorscheme("catppuccin")
-  end
+  end,
 }
-
