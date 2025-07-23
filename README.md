@@ -30,7 +30,8 @@ This config is heavily influenced by [kickstart](https://github.com/nvim-lua/kic
 - snacks: a collection of useful utilities and enhancements for Neovim
 - todo-comments: highlight and manage TODO comments within your code
 - which-key: a keybinding helper for discovering key mappings in Neovim
-- uv.nvim: a Neovim plugin providing integration with the uv Python package manager, offering a smooth workflow for Python development in Neovim.
+- uv.nvim: a Neovim plugin providing integration with the uv Python package
+  manager, offering a smooth workflow for Python development in Neovim.
 
 **Appearance**: Consistent and visually pleasing color scheme and status line setup.
 ![Screenshot](./screenshot.png)
