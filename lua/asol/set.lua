@@ -30,9 +30,16 @@ vim.opt.smartindent = true
 -- in the buffer, see 'textwidth' for that.
 vim.opt.wrap = false
 
+-- Text that's over 80 character will be linebroke
+vim.opt_global.textwidth = 80
+vim.opt_local.linebreak = true
+vim.opt.colorcolumn = "80"
+
 -- Ignore case in search patterns, cmdline-completion, when
 -- 	searching in the tags file, and expr-==.
 vim.opt.ignorecase = true
+-- CMD line height 1
+vim.opt.cmdheight = 1
 -- Override the 'ignorecase' option if the search pattern contains upper
 -- 	case characters.  Only used when the search pattern is typed and
 -- 	'ignorecase' option is on.
@@ -59,8 +66,6 @@ vim.opt.pumheight = 10
 -- The value of this option determines the scroll behavior when opening,
 -- 	closing or resizing horizontal splits.
 vim.opt.spk = "cursor"
-
-vim.opt.colorcolumn = "90"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
