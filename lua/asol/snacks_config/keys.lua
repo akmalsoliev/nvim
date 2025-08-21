@@ -80,13 +80,13 @@ return {
     end,
     desc = "Find Config File",
   },
-  {
-    "<leader>ff",
-    function()
-      Snacks.picker.files({ hidden = true })
-    end,
-    desc = "Find Files",
-  },
+  -- {
+  --   "<leader>ff",
+  --   function()
+  --     Snacks.picker.files({ hidden = true })
+  --   end,
+  --   desc = "Find Files",
+  -- },
   {
     "<leader>fg",
     function()
