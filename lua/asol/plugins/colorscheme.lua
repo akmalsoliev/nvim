@@ -1,25 +1,24 @@
--- return {
---   "catppuccin/nvim",
---   event = "VimEnter", -- Sets the loading event to 'VimEnter'
---   name = "catppuccin",
---   priority = 1000,
---   opts = {
---     term_colors = true,
---     transparent_background = true,
---   },
---   config = function(_, opts)
---     -- This code runs after the plugin is loaded
---     require("catppuccin").setup(opts)
---     vim.cmd.colorscheme("catppuccin")
---   end,
--- }
---
-
 return {
   "mcauley-penney/techbase.nvim",
   event = "VimEnter", -- Sets the loading event to 'VimEnter'
   config = function()
     vim.cmd.colorscheme("techbase")
   end,
+  opts = {
+    plugin_support = {
+      aerial = true,
+      blink = true,
+      edgy = true,
+      gitsigns = true,
+      hl_match_area = true,
+      lazy = true,
+      lualine = true,
+      mason = true,
+      mini_cursorword = true,
+      nvim_cmp = true,
+      vim_illuminate = true,
+      visual_whitespace = true,
+    },
+  },
   priority = 1000,
 }
