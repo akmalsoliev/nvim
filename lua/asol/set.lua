@@ -30,10 +30,18 @@ vim.opt.smartindent = true
 -- in the buffer, see 'textwidth' for that.
 vim.opt.wrap = false
 
--- Text that's over 80 character will be linebroke
-vim.opt_global.textwidth = 80
-vim.opt_local.linebreak = true
-vim.opt.colorcolumn = "80"
+-- Text that's over 80 character will be linebroke, this is only for markdwon,
+-- text and gitcommit
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "gitcommit" },
+  callback = function()
+    vim.opt_local.textwidth = 80
+    vim.opt_local.linebreak = true
+  end,
+})
+
+-- Color line
+vim.opt.colorcolumn = "81"
 
 -- Ignore case in search patterns, cmdline-completion, when
 -- 	searching in the tags file, and expr-==.

@@ -18,7 +18,7 @@ return {
       lua = { "stylua" },
       javascript = { "prettier" },
       typescript = { "prettier" },
-      markdown = { "prettier" },
+      markdown = { "mdformat" },
       json = { "prettier" },
       yaml = { "yamlfmt" },
       ["_"] = { "trim_whitespace", lsp_format = "prefer" },
