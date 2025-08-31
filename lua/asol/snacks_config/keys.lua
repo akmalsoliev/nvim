@@ -74,20 +74,6 @@ return {
   },
   -- find
   {
-    "<leader>fc",
-    function()
-      Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-    end,
-    desc = "Find Config File",
-  },
-  -- {
-  --   "<leader>ff",
-  --   function()
-  --     Snacks.picker.files({ hidden = true })
-  --   end,
-  --   desc = "Find Files",
-  -- },
-  {
     "<leader>fg",
     function()
       Snacks.picker.git_files()

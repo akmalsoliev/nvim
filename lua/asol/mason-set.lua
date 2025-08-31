@@ -1,13 +1,12 @@
 local masonConfig = {
-  "basedpyright",        --python
-  "ruff",                -- python
+  "basedpyright", --python
+  "ruff", -- python
   "lua-language-server", -- lua
-  "stylua",              -- lua
-  "rust-analyzer",       --rust
-  "terraform-ls",        --terraform
-  "prettier",            --js, ts, json, json
-  "yamlfmt",             -- yaml
-  "mdformat",            -- markdown
+  "stylua", -- lua
+  "rust-analyzer", --rust
+  "terraform-ls", --terraform
+  "prettier", --js, ts, json, json, markdown
+  "yamlfmt", -- yaml
 }
 
 require("mason").setup()

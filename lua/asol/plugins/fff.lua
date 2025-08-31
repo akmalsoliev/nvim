@@ -14,5 +14,12 @@ return {
       end,
       desc = "Open file picker",
     },
+    {
+      "<leader>fc",
+      function()
+        require("fff").find_files_in_dir(vim.fn.stdpath("config"))
+      end,
+      desc = "Find Config File",
+    },
   },
 }
