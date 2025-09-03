@@ -20,12 +20,15 @@ return {
       typescript = { "prettier" },
       markdown = { "prettier" },
       json = { "prettier" },
-      yaml = { "yamlfmt" },
+      yaml = { "prettier" },
       ["_"] = { "trim_whitespace", lsp_format = "prefer" },
     },
     formatters = {
-      yamlfmt = {
-        prepend_args = { "-global_conf" },
+      prettier = {
+        prepend_args = function()
+          local config_path = vim.fn.expand("$XDG_CONFIG_HOME/prettier/prettier.yaml")
+          return { "--config", config_path }
+        end,
       },
     },
     format_on_save = { timeout_ms = 500 },
