@@ -19,15 +19,15 @@ return {
         desc = "Update",
         action = function()
           vim.cmd("Lazy update")
-          print("Lazy Updated")
+          vim.notify("Lazy Updated")
           vim.cmd("MasonToolsUpdate")
-          print("Mason Updated")
+          vim.notify("Mason Updated")
           vim.fn.system("uv tool upgrade --all")
-          print("UV Updated")
+          vim.notify("UV Updated")
           vim.fn.system("bun update --global")
-          print("bun Updated")
+          vim.notify("bun Updated")
           vim.fn.system("rustup update")
-          print("rustup Updated")
+          vim.notify("rustup Updated")
         end,
       },
       { icon = " ", key = "q", desc = "Quit", action = ":qa" },
