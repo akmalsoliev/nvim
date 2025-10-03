@@ -21,6 +21,7 @@ return {
       markdown = { "prettier" },
       json = { "prettier" },
       yaml = { "prettier" },
+      toml = { "tombi" },
       ["_"] = { "trim_whitespace", lsp_format = "prefer" },
     },
     formatters = {
