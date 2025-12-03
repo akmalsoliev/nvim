@@ -6,7 +6,7 @@
 
 ---
 return {
-  cmd = { "tombi", "lsp" },
+  cmd = { "uvx", "tombi", "lsp" },
   filetypes = { "toml" },
   root_markers = { "tombi.toml", "pyproject.toml", ".git" },
 }

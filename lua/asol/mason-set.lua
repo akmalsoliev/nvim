@@ -1,7 +1,7 @@
 local masonConfig = {
   "lua-language-server", -- lua
-  "stylua",              -- lua
-  "rust-analyzer",       --rust
+  "stylua", -- lua
+  "rust-analyzer", -- rust
 }
 
 require("mason").setup()
