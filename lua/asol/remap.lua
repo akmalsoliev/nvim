@@ -46,9 +46,3 @@ vim.keymap.set(allModes, "<C-c>", "<Esc>", { silent = true })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", {
   desc = "Exit terminal mode",
 })
-
--- Setting key to delete buffer
-vim.keymap.set("n", "<leader>bq", ":bdelete<CR>", {
-  silent = true,
-  desc = "Delete Buffer",
-})

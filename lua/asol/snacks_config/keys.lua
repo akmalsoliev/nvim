@@ -65,13 +65,6 @@ return {
     end,
     desc = "Notification History",
   },
-  {
-    "<leader>e",
-    function()
-      Snacks.explorer()
-    end,
-    desc = "File Explorer",
-  },
   -- find
   {
     "<leader>fg",
@@ -358,5 +351,12 @@ return {
       Snacks.picker.lsp_workspace_symbols()
     end,
     desc = "LSP Workspace Symbols",
+  },
+  {
+    "<leader>bq",
+    function()
+      Snacks.bufdelete()
+    end,
+    desc = "Delete buffer",
   },
 }
