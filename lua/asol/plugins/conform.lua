@@ -21,6 +21,7 @@ return {
       markdown = { "prettier" },
       json = { "prettier" },
       yaml = { "prettier" },
+      go = { "gofmt" },
       ["_"] = { "trim_whitespace", lsp_format = "prefer" },
     },
     formatters = {
