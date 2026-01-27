@@ -23,12 +23,22 @@ return {
       yaml = { "prettier" },
       go = { "gofmt" },
       ["_"] = { "trim_whitespace", lsp_format = "prefer" },
+      sql = { "sqlfluff" },
+      pgsql = { "sqlfluff" },
     },
     formatters = {
       prettier = {
         prepend_args = function()
           local config_path = vim.fn.expand("$XDG_CONFIG_HOME/prettier/prettier.yaml")
           return { "--config", config_path }
+        end,
+      },
+      sqlfluff = {
+        command = "sqlfluff",
+        args = { "format", "-" },
+        stdin = true,
+        cwd = function()
+          return vim.fn.getcwd()
         end,
       },
     },

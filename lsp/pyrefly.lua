@@ -1,6 +1,6 @@
 ---@type vim.lsp.Config
 return {
-  cmd = { "pyrefly", "lsp" },
+  cmd = { "uvx", "pyrefly", "lsp" },
   filetypes = { "python" },
   root_markers = {
     "pyrefly.toml",
@@ -11,7 +11,11 @@ return {
     "Pipfile",
     ".git",
   },
-  on_exit = function(code, _, _)
-    vim.notify("Closing Pyrefly LSP exited with code: " .. code, vim.log.levels.INFO)
-  end,
+  settings = {
+    python = {
+      pyrefly = {
+        displayTypeErrors = "force-on",
+      },
+    },
+  },
 }

@@ -8,4 +8,18 @@ return {
     ".git",
     "ty.toml",
   },
+  handlers = {
+    ["textDocument/publishDiagnostics"] = function(err, result, ctx)
+      result.diagnostics = vim.tbl_filter(function(diagnostic)
+        return diagnostic.severity == vim.lsp.protocol.DiagnosticSeverity.Error
+      end, result.diagnostics)
+      vim.lsp.diagnostic.on_publish_diagnostics(err, result, ctx)
+    end,
+    -- Ignore inlay hints entirely
+    ["textDocument/inlayHint"] = function() end,
+  },
+  on_attach = function(client, bufnr)
+    -- Disable the capability so Neovim doesn't request inlay hints
+    client.server_capabilities.inlayHintProvider = false
+  end,
 }

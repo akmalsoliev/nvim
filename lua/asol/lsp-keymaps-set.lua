@@ -9,7 +9,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     map("[d", vim.diagnostic.goto_prev, "Go to previous [D]iagnostic message")
     map("]d", vim.diagnostic.goto_next, "Go to next [D]iagnostic message")
-    map("<leader>e", vim.diagnostic.open_float, "Show diagnostic [E]rror messages")
+    map("<leader>e", function()
+      vim.diagnostic.open_float({ source = true })
+    end, "Show diagnostic [E]rror messages")
     map("<leader>q", vim.diagnostic.setloclist, "Open diagnostic [Q]uickfix list")
 
     -- Rename the variable under your cursor
