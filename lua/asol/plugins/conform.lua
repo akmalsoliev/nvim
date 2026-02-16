@@ -18,7 +18,7 @@ return {
       lua = { "stylua" },
       javascript = { "prettier" },
       typescript = { "prettier" },
-      markdown = { "prettier" },
+      markdown = { "rumdl_fmt" },
       json = { "prettier" },
       yaml = { "prettier" },
       go = { "gofmt" },
@@ -35,14 +35,25 @@ return {
       },
       sqlfluff = {
         command = "sqlfluff",
-        args = { "format", "-" },
-        stdin = true,
+        args = { "fix", "--FIX-EVEN-UNPARSABLE", "$FILENAME" },
+        stdin = false,
         cwd = function()
           return vim.fn.getcwd()
         end,
       },
+      rumdl_fmt = {
+        command = "rumdl",
+        args = { "fmt", "-", "--quiet" },
+        stdin = true,
+      },
     },
-    format_on_save = { timeout_ms = 500 },
+    format_on_save = function(bufnr)
+      local ft = vim.bo[bufnr].filetype
+      if ft == "sql" or ft == "pgsql" then
+        return { timeout_ms = 10000, lsp_format = "fallback" }
+      end
+      return { timeout_ms = 500, lsp_format = "fallback" }
+    end,
     default_format_opts = {
       lsp_format = "fallback",
     },
