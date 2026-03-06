@@ -11,6 +11,15 @@ return {
       mode = "",
       desc = "Format buffer",
     },
+    {
+      "<leader>ft",
+      function()
+        vim.g.disable_autoformat = not vim.g.disable_autoformat
+        vim.b.disable_autoformat = vim.g.disable_autoformat
+        vim.notify("Format on save: " .. (vim.g.disable_autoformat and "OFF" or "ON"))
+      end,
+      desc = "Toggle format on save",
+    },
   },
   opts = {
     formatters_by_ft = {
@@ -21,6 +30,7 @@ return {
       json = { "prettier" },
       yaml = { "prettier" },
       go = { "gofmt" },
+      python = { "ruff_format", "ruff_organize_imports" },
       ["_"] = { "trim_whitespace", lsp_format = "prefer" },
     },
     formatters = {
@@ -37,11 +47,10 @@ return {
       },
     },
     format_on_save = function(bufnr)
-      local ft = vim.bo[bufnr].filetype
-      if ft == "sql" or ft == "pgsql" then
-        return { timeout_ms = 10000, lsp_format = "fallback" }
+      if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+        return
       end
-      return { timeout_ms = 500, lsp_format = "fallback" }
+      return { timeout_ms = 10000, lsp_format = "fallback" }
     end,
     default_format_opts = {
       lsp_format = "fallback",
