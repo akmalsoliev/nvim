@@ -9,49 +9,50 @@ This config is heavily influenced by
 
 ## Features
 
-### **Plugins**: Utilizes popular plugins to enhance Neovim's functionality,
+### Plugins
 
-including:
+Utilizes popular plugins to enhance Neovim's functionality, including:
 
 - aerial: a code outline window for skimming and quick navigation
 - blink-cmp: a modern completion engine with fuzzy matching and better UI
-- colorscheme-catppuccin: a soothing pastel color scheme for enhanced visual
-  experience
-- conform: a formatting solution to get consistent code styles
-- dab: debug Adapter Protocol client implementation for Neovim
+- conform: a formatting solution with format-on-save toggle and consistent code
+  styles
+- dab: Debug Adapter Protocol client with support for Python, Lua, and Go
+- diffview: git diff viewer for comparing branches and changes
+- fff: a fast file picker built in Rust for quick file navigation
 - flash: lets you navigate your code with search labels, enhanced character
-  motions, and Treesitter integration.
+  motions, and Treesitter integration
 - gitignore: a plugin to manage .gitignore files efficiently
 - gitsigns: git integration for Neovim to show git change signs and perform git
   actions
 - lualine: a responsive statusline written in Lua with a variety of
   configurations
 - mason: easily install and manage LSP servers, linters, and formatters
-- mini: a minimal and fast collection of Lua modules for Neovim
+- mini: a minimal and fast collection of Lua modules including text objects,
+  autopairs, and surroundings
+- noice: enhanced UI for command line, search, and LSP documentation
 - nvim-scrollbar: a customizable scrollbar plugin for Neovim
-- nvim-treesitter: a better syntax highlighting and code parsing using
-  Tree-sitter
+- nvim-treesitter: better syntax highlighting and code parsing using Tree-sitter
 - oil: an improved file explorer as a buffer in Neovim
 - rainbow_csv: a highlighter for CSV and TSV files to enhance readability
-- smear-cursor: enhanced cursor animation for better visibility
-- snacks: a collection of useful utilities and enhancements for Neovim
+- snacks: a collection of utilities including dashboard, picker, indent guides,
+  scroll, and notifications
+- techbase: a modern dark color scheme
 - todo-comments: highlight and manage TODO comments within your code
+- uv.nvim: integration with the uv Python package manager for smooth Python
+  development in Neovim
 - which-key: a keybinding helper for discovering key mappings in Neovim
-- uv.nvim: a Neovim plugin providing integration with the uv Python package
-  manager, offering a smooth workflow for Python development in Neovim.
+- wrapped: text wrapping utilities
 
-**Appearance**: Consistent and visually pleasing color scheme and status line
-setup. ![Screenshot](./screenshot.png)
+### Appearance
+
+Consistent and visually pleasing color scheme and status line setup.
+![Screenshot](./screenshot.png)
 
 ## Setup
 
 The configuration uses [lazy.nvim](https://github.com/folke/lazy.nvim) for
-plugin management.
-
-For AI completion features, this setup uses:
-
-- minuet-ai.nvim connected to Ollama for local AI code completion
-- blink.cmp for modern code completion with fuzzy matching
+plugin management. LSP servers are auto-discovered from the `lsp/` directory.
 
 ## Performance
 
