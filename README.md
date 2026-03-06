@@ -27,7 +27,6 @@ Utilizes popular plugins to enhance Neovim's functionality, including:
   actions
 - lualine: a responsive statusline written in Lua with a variety of
   configurations
-- mason: easily install and manage LSP servers, linters, and formatters
 - mini: a minimal and fast collection of Lua modules including text objects,
   autopairs, and surroundings
 - noice: enhanced UI for command line, search, and LSP documentation
