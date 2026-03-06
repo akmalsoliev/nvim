@@ -42,7 +42,6 @@ Utilizes popular plugins to enhance Neovim's functionality, including:
 - uv.nvim: integration with the uv Python package manager for smooth Python
   development in Neovim
 - which-key: a keybinding helper for discovering key mappings in Neovim
-- wrapped: text wrapping utilities
 
 ### Appearance
 
