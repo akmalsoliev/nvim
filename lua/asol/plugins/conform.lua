@@ -31,6 +31,7 @@ return {
       yaml = { "prettier" },
       go = { "gofmt" },
       python = { "ruff_format", "ruff_organize_imports" },
+      terraform = { "terraform_fmt" },
       ["_"] = { "trim_whitespace", lsp_format = "prefer" },
     },
     formatters = {
