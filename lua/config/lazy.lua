@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    { import = "asol.plugins" },
+    -- this is a directory under nvim/lua/plugins
+    { import = "../plugins/" },
   },
   defaults = {
     lazy = false,

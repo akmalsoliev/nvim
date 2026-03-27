@@ -20,8 +20,6 @@ return {
         action = function()
           vim.cmd("Lazy update")
           vim.notify("Lazy Updated")
-          vim.cmd("MasonToolsUpdate")
-          vim.notify("Mason Updated")
           vim.fn.system("uv tool upgrade --all")
           vim.notify("UV Updated")
           vim.fn.system("bun update --global")

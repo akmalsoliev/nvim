@@ -36,6 +36,7 @@ return {
     },
 
     -- (Default) Only show the documentation popup when manually triggered
+    -- I like having documentation
     completion = { documentation = { auto_show = true } },
 
     -- Default list of enabled providers defined so that you can extend it

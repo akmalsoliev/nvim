@@ -1,4 +1,4 @@
-local snacks_config = require("asol.snacks_config")
+local snacks_config = require("config.snacks_config")
 return {
   "folke/snacks.nvim",
   priority = 1000,
