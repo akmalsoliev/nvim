@@ -2,10 +2,7 @@ return { -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   config = function()
-    -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-
-    ---@diagnostic disable-next-line: missing-fields
-    require("nvim-treesitter.configs").setup({
+    require("nvim-treesitter").setup({
       ensure_installed = {
         "bash",
         "dockerfile",
@@ -24,10 +21,7 @@ return { -- Highlight, edit, and navigate code
         "vimdoc",
         "yaml",
       },
-      -- Autoinstall languages that are not installed
       auto_install = true,
-      highlight = { enable = true },
-      indent = { enable = true },
     })
   end,
 }

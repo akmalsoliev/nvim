@@ -1,5 +1,17 @@
 return {
   enabled = true,
+  sections = {
+    { section = "header" },
+    { section = "keys", gap = 1, padding = 1 },
+    {
+      text = {
+        { "  Loaded ", hl = "footer" },
+        { tostring(#vim.pack.get()), hl = "Special" },
+        { " plugins", hl = "footer" },
+      },
+      padding = 1,
+    },
+  },
   preset = {
     ---@type snacks.dashboard.Item[]
     keys = {
@@ -12,14 +24,13 @@ return {
         desc = "Config",
         action = ':lua require("fff").find_files_in_dir(vim.fn.stdpath("config"))',
       },
-      { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
       {
         key = "u",
         icon = "󰊳 ",
         desc = "Update",
         action = function()
-          vim.cmd("Lazy update")
-          vim.notify("Lazy Updated")
+          vim.pack.update()
+          vim.notify("Plugins Updated")
           vim.fn.system("uv tool upgrade --all")
           vim.notify("UV Updated")
           vim.fn.system("bun update --global")

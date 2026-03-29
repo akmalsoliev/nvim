@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api:*)",
+      "Bash(gh search:*)",
+      "Bash(python3 -c \"import json,sys; [print\\(f''''{p[\"\"number\"\"]} [{p[\"\"state\"\"]}] {p[\"\"title\"\"]}''''\\) for p in json.loads\\(sys.stdin.read\\(\\)\\)]\")",
+      "Bash(ls:*)",
+      "Bash(gh pr:*)",
+      "Bash(gh issue:*)"
+    ]
+  }
+}

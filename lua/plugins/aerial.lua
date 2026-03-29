@@ -1,12 +1,12 @@
 return {
-  'stevearc/aerial.nvim',
+  "stevearc/aerial.nvim",
   opts = {
     layout = {
       -- These control the width of the aerial window.
       -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
       -- min_width and max_width can be a list of mixed types.
       -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
-      width = .4,
+      width = 0.4,
       min_width = 10,
 
       -- key-value pairs of window-local options for aerial window (e.g. winhl)
@@ -28,6 +28,6 @@ return {
     },
   },
   keys = {
-    {'<leader>a', ':AerialToggle<CR>', mode="n", desc="[A]erial Toggle"}
+    { "<leader>a", ":AerialToggle<CR>", mode = "n", desc = "[A]erial Toggle" },
   },
 }

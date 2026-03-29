@@ -269,9 +269,9 @@ return {
   {
     "<leader>sp",
     function()
-      Snacks.picker.lazy()
+      Snacks.picker.files({ cwd = vim.fn.stdpath("config") .. "/lua/plugins" })
     end,
-    desc = "Search for Plugin Spec",
+    desc = "Search Plugin Specs",
   },
   {
     "<leader>sq",

@@ -1,2 +1,2 @@
 -- Generates .gitignore
-return {"wintermute-cell/gitignore.nvim"}
+return { "wintermute-cell/gitignore.nvim" }
