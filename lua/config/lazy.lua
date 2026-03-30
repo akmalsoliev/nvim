@@ -1,3 +1,0 @@
--- Replaced by pack.lua (vim.pack, Neovim 0.12+)
--- This file is intentionally empty.
--- See lua/config/pack.lua for the new plugin manager setup.

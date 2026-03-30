@@ -1,33 +1,31 @@
-return {
-  "stevearc/aerial.nvim",
-  opts = {
-    layout = {
-      -- These control the width of the aerial window.
-      -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
-      -- min_width and max_width can be a list of mixed types.
-      -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
-      width = 0.4,
-      min_width = 10,
+vim.pack.add({"https://github.com/stevearc/aerial.nvim.git"})
 
-      -- key-value pairs of window-local options for aerial window (e.g. winhl)
-      win_opts = {},
+require("aerial").setup({
+  layout = {
+    -- These control the width of the aerial window.
+    -- They can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
+    -- min_width and max_width can be a list of mixed types.
+    -- max_width = {40, 0.2} means "the lesser of 40 columns or 20% of total"
+    width = 0.4,
+    min_width = 10,
 
-      -- Determines the default direction to open the aerial window. The 'prefer'
-      -- options will open the window in the other direction *if* there is a
-      -- different buffer in the way of the preferred direction
-      -- Enum: prefer_right, prefer_left, right, left, float
-      default_direction = "prefer_right",
+    -- key-value pairs of window-local options for aerial window (e.g. winhl)
+    win_opts = {},
 
-      -- Determines where the aerial window will be opened
-      --   edge   - open aerial at the far right/left of the editor
-      --   window - open aerial to the right/left of the current window
-      placement = "window",
+    -- Determines the default direction to open the aerial window. The 'prefer'
+    -- options will open the window in the other direction *if* there is a
+    -- different buffer in the way of the preferred direction
+    -- Enum: prefer_right, prefer_left, right, left, float
+    default_direction = "prefer_right",
 
-      -- Preserve window size equality with (:help CTRL-W_=)
-      preserve_equality = false,
-    },
+    -- Determines where the aerial window will be opened
+    --   edge   - open aerial at the far right/left of the editor
+    --   window - open aerial to the right/left of the current window
+    placement = "window",
+
+    -- Preserve window size equality with (:help CTRL-W_=)
+    preserve_equality = false,
   },
-  keys = {
-    { "<leader>a", ":AerialToggle<CR>", mode = "n", desc = "[A]erial Toggle" },
-  },
-}
+})
+
+vim.keymap.set("n", "<leader>a", ":AerialToggle<CR>", { desc = "[A]erial Toggle" })
