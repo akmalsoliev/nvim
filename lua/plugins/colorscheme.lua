@@ -1,8 +1,10 @@
 return {
-  "mcauley-penney/techbase.nvim",
-  event = "VimEnter", -- Sets the loading event to 'VimEnter'
-  config = function()
-    vim.cmd.colorscheme("techbase")
-  end,
+  "sainnhe/everforest",
+  lazy = false,
   priority = 1000,
+  config = function()
+    vim.o.background = "dark"
+    vim.g.everforest_background = "medium"
+    vim.cmd.colorscheme("everforest")
+  end,
 }
