@@ -1,4 +1,4 @@
-local snacks_config = require("config.snacks_config")
+local snacks_config = require("snacks_config")
 return {
   "folke/snacks.nvim",
   priority = 1000,

@@ -22,8 +22,6 @@ return {
           vim.notify("Lazy Updated")
           vim.fn.system("uv tool upgrade --all")
           vim.notify("UV Updated")
-          vim.fn.system("bun update --global")
-          vim.notify("bun Updated")
           vim.fn.system("rustup update")
           vim.notify("rustup Updated")
         end,

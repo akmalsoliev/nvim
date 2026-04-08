@@ -52,13 +52,3 @@ for _, files in pairs(lspSplitFiles) do
   local fileName = files:match("([^/\\]+)%.lua$")
   vim.lsp.enable(fileName)
 end
-
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("my.lsp", {}),
-  callback = function(args)
-    local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-    local bufnr = args.buf
-
-    -- Add any other on-attach logic here (keymaps, etc.)
-  end,
-})
