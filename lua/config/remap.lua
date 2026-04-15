@@ -7,9 +7,6 @@
 --                            | |
 --                            |_|
 
--- All modes available in Neovim
-local allModes = { "n", "i", "v", "c", "s", "o", "x" }
-
 -- Will be used to remap the `:` to `;`
 vim.keymap.set("n", ";", ":", { desc = "Remapped command mode" })
 
@@ -33,12 +30,8 @@ vim.keymap.set("n", "<leader>C", ":noh<CR>", {
   desc = "[C]lear search",
 })
 
--- Word suggestion
-vim.keymap.set("n", "<leader>sg", "z=", {
-  silent = true,
-  desc = "Word [S]u[g]gestion",
-})
-
+-- All modes available in Neovim
+local allModes = { "n", "i", "v", "c", "s", "o", "x" }
 -- remapping escape
 vim.keymap.set(allModes, "<C-c>", "<Esc>", { silent = true })
 
