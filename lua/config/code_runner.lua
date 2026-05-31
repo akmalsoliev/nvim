@@ -37,14 +37,24 @@ function M.run(cmd)
   -- Focus the runner window briefly to run termopen
   vim.api.nvim_set_current_win(runner_win)
 
+  local function scroll_to_bottom()
+    if runner_win and vim.api.nvim_win_is_valid(runner_win) and runner_buf and vim.api.nvim_buf_is_valid(runner_buf) then
+      local line_count = vim.api.nvim_buf_line_count(runner_buf)
+      vim.api.nvim_win_set_cursor(runner_win, { line_count, 0 })
+    end
+  end
+
   -- Run the command
   vim.fn.termopen(cmd, {
+    on_stdout = scroll_to_bottom,
+    on_stderr = scroll_to_bottom,
     on_exit = function(_, exit_code, _)
       -- Rename the buffer to show status
       if vim.api.nvim_buf_is_valid(runner_buf) then
         local status = exit_code == 0 and "✓ SUCCESS" or "✗ FAILED (" .. exit_code .. ")"
         vim.api.nvim_buf_set_name(runner_buf, " " .. cmd .. " — " .. status)
       end
+      scroll_to_bottom()
     end,
   })
 
