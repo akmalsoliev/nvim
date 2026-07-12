@@ -12,6 +12,22 @@ return {
       },
     })
 
+    require("mini.files").setup({
+      mappings = {
+        go_in_plus = "<CR>",
+        go_out = "-",
+      },
+    })
+    vim.keymap.set("n", "-", function()
+      local MiniFiles = require("mini.files")
+      -- Only open a new instance if one isn't already active.
+      -- Prevents the global `-` from re-opening/resetting the explorer,
+      -- so the buffer-local `go_out` mapping (`-`) works cleanly.
+      if not MiniFiles.close() then
+        MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
+      end
+    end, { desc = "Open MiniFiles" })
+
     -- Disable ' auto-pairing in Rust (conflicts with lifetime annotations)
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "rust",

@@ -37,8 +37,12 @@ return {
     formatters = {
       prettier = {
         prepend_args = function()
-          local config_path = vim.fn.expand("$XDG_CONFIG_HOME/prettier/prettier.yaml")
-          return { "--config", config_path }
+          local xdg = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config")
+          local config_path = xdg .. "/prettier/prettier.yaml"
+          if vim.fn.filereadable(config_path) == 1 then
+            return { "--config", config_path }
+          end
+          return {}
         end,
       },
       rumdl_fmt = {
