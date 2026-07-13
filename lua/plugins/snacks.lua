@@ -27,6 +27,7 @@ return {
     notifier = snacks_config.notifier,
     notify = { enabled = true },
     styles = snacks_config.styles,
+    zen = { enabled = true, width = 70 },
   },
   keys = snacks_config.keys,
   init = snacks_config.configuration,

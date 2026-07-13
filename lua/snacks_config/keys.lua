@@ -359,4 +359,11 @@ return {
     end,
     desc = "Delete buffer",
   },
+  {
+    "<leader>uz",
+    function()
+      Snacks.zen()
+    end,
+    desc = "Toggle Zen Mode",
+  },
 }
