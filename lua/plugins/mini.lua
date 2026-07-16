@@ -19,29 +19,18 @@ return {
           local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
           local git = MiniStatusline.section_git({ trunc_width = 40 })
           local diff = MiniStatusline.section_diff({ trunc_width = 75 })
-          local diagnostics = MiniStatusline.section_diagnostics({ trunc_width = 75 })
           local filename = MiniStatusline.section_filename({ trunc_width = 140 })
           local fileinfo = MiniStatusline.section_fileinfo({ trunc_width = 120 })
-          local progress = "%2p%%" -- matches lualine "progress"
-
-          return MiniStatusline.combine_groups({
-            { hl = mode_hl, strings = { mode } },
-            { hl = "MiniStatuslineDevinfo", strings = { git, diff, diagnostics } },
-            "%<", -- truncate point
-            { hl = "MiniStatuslineFilename", strings = { filename } },
-            "%=", -- right align
-            { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
-            { hl = mode_hl, strings = { progress } },
-          })
-        end,
-        inactive = function()
-          local filename = MiniStatusline.section_filename({ trunc_width = 140 })
           local location = MiniStatusline.section_location({ trunc_width = 75 })
 
           return MiniStatusline.combine_groups({
-            { hl = "MiniStatuslineInactive", strings = { filename } },
+            { hl = mode_hl, strings = { mode } },
+            { hl = "MiniStatuslineDevinfo", strings = { git, diff } },
+            "%<",
+            { hl = "MiniStatuslineFilename", strings = { filename } },
             "%=",
-            { hl = "MiniStatuslineInactive", strings = { location } },
+            { hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
+            { hl = mode_hl, strings = { location } },
           })
         end,
       },
