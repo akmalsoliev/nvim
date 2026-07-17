@@ -30,7 +30,6 @@ Utilizes popular plugins to enhance Neovim's functionality, including:
   (mini.files)
 - noice: enhanced UI for command line, search, and LSP documentation
 - rainbow-delimiters: rainbow highlighting for nested brackets and delimiters
-- rainbow_csv: a highlighter for CSV and TSV files to enhance readability
 - rustowl: ownership and lifetime visualization for Rust code
 - snacks: a collection of utilities including dashboard, picker, indent guides,
   scroll, notifications, and zen mode
