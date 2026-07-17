@@ -25,32 +25,42 @@ Utilizes popular plugins to enhance Neovim's functionality, including:
 - gitignore: a plugin to manage .gitignore files efficiently
 - gitsigns: git integration for Neovim to show git change signs and perform git
   actions
-- lualine: a responsive statusline written in Lua with a variety of
-  configurations
-- mini: a minimal and fast collection of Lua modules including text objects,
-  autopairs, and surroundings
+- mini: a minimal and fast collection of Lua modules providing text objects,
+  autopairs, surroundings, a minimal statusline, and a file explorer
+  (mini.files)
 - noice: enhanced UI for command line, search, and LSP documentation
-- nvim-scrollbar: a customizable scrollbar plugin for Neovim
-- nvim-treesitter: better syntax highlighting and code parsing using Tree-sitter
-- oil: an improved file explorer as a buffer in Neovim
+- rainbow-delimiters: rainbow highlighting for nested brackets and delimiters
 - rainbow_csv: a highlighter for CSV and TSV files to enhance readability
+- rustowl: ownership and lifetime visualization for Rust code
 - snacks: a collection of utilities including dashboard, picker, indent guides,
-  scroll, and notifications
-- techbase: a modern dark color scheme
+  scroll, notifications, and zen mode
 - todo-comments: highlight and manage TODO comments within your code
+- tree-sitter-manager: manages Tree-sitter parsers for syntax highlighting and
+  indentation
 - uv.nvim: integration with the uv Python package manager for smooth Python
   development in Neovim
 - which-key: a keybinding helper for discovering key mappings in Neovim
 
+### Custom utilities
+
+- code runner: a lightweight custom runner (`lua/config/code_runner.lua`) that
+  executes commands (e.g. cargo) in a reusable split buffer
+- native undotree: undo history navigation using Neovim's built-in
+  functionality
+
 ### Appearance
 
-Consistent and visually pleasing color scheme and status line setup.
+Consistent and visually pleasing setup using the ayu (dark) color scheme and a
+minimal mini.statusline.
 ![Screenshot](./screenshot.png)
 
 ## Setup
 
 The configuration uses [lazy.nvim](https://github.com/folke/lazy.nvim) for
-plugin management. LSP servers are auto-discovered from the `lsp/` directory.
+plugin management. LSP servers are auto-discovered from the `lsp/` directory
+(basedpyright, ruff, rust-analyzer, lua_ls, gopls, terraformls,
+typescript-language-server, dbt_ls, tombi, and more) and are expected to be
+installed externally (e.g. via Homebrew) — Mason is not used.
 
 ## Performance
 
