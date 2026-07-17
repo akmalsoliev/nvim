@@ -22,7 +22,6 @@ Utilizes popular plugins to enhance Neovim's functionality, including:
 - fff: a fast file picker built in Rust for quick file navigation
 - flash: lets you navigate your code with search labels, enhanced character
   motions, and Treesitter integration
-- gitignore: a plugin to manage .gitignore files efficiently
 - gitsigns: git integration for Neovim to show git change signs and perform git
   actions
 - mini: a minimal and fast collection of Lua modules providing text objects,
