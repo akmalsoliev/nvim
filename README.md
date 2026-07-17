@@ -37,8 +37,6 @@ Utilizes popular plugins to enhance Neovim's functionality, including:
 - todo-comments: highlight and manage TODO comments within your code
 - tree-sitter-manager: manages Tree-sitter parsers for syntax highlighting and
   indentation
-- uv.nvim: integration with the uv Python package manager for smooth Python
-  development in Neovim
 - which-key: a keybinding helper for discovering key mappings in Neovim
 
 ### Custom utilities
