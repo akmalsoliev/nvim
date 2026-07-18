@@ -1,5 +1,7 @@
 return {
   "saghen/blink.cmp",
+  -- CmdlineEnter included so cmdline completion works before the first InsertEnter
+  event = { "InsertEnter", "CmdlineEnter" },
   -- optional: provides snippets for the snippet source
   dependencies = { "rafamadriz/friendly-snippets" },
 
