@@ -366,4 +366,20 @@ return {
     end,
     desc = "Toggle Zen Mode",
   },
+  {
+    "<leader>a",
+    function()
+      local clients = vim.lsp.get_clients({
+        bufnr = 0,
+        method = "textDocument/documentSymbol",
+      })
+      if #clients > 0 then
+        -- yaml symbols are Object/Array/String kinds, which the default filter drops
+        Snacks.picker.lsp_symbols({ filter = { yaml = true } })
+      else
+        Snacks.picker.treesitter()
+      end
+    end,
+    desc = "Document symbols (outline)",
+  },
 }

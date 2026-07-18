@@ -28,23 +28,12 @@ return {
       typescript = { "prettier" },
       markdown = { "rumdl_fmt" },
       json = { "prettier" },
-      yaml = { "prettier" },
       go = { "gofmt" },
       python = { "ruff_format", "ruff_organize_imports" },
       terraform = { "terraform_fmt" },
       ["_"] = { "trim_whitespace", lsp_format = "prefer" },
     },
     formatters = {
-      prettier = {
-        prepend_args = function()
-          local xdg = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config")
-          local config_path = xdg .. "/prettier/prettier.yaml"
-          if vim.fn.filereadable(config_path) == 1 then
-            return { "--config", config_path }
-          end
-          return {}
-        end,
-      },
       rumdl_fmt = {
         command = "rumdl",
         args = { "fmt", "-", "--quiet" },

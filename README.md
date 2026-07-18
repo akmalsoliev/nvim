@@ -13,7 +13,6 @@ This config is heavily influenced by
 
 Utilizes popular plugins to enhance Neovim's functionality, including:
 
-- aerial: a code outline window for skimming and quick navigation
 - blink-cmp: a modern completion engine with fuzzy matching and better UI
 - conform: a formatting solution with format-on-save toggle and consistent code
   styles
