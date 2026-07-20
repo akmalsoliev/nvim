@@ -27,7 +27,6 @@ return {
       javascript = { "prettier" },
       typescript = { "prettier" },
       markdown = { "rumdl_fmt" },
-      json = { "prettier" },
       go = { "gofmt" },
       python = { "ruff_format", "ruff_organize_imports" },
       terraform = { "terraform_fmt" },

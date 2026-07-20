@@ -374,12 +374,23 @@ return {
         method = "textDocument/documentSymbol",
       })
       if #clients > 0 then
-        -- yaml symbols are Object/Array/String kinds, which the default filter drops
-        Snacks.picker.lsp_symbols({ filter = { yaml = true } })
+        -- yaml/json symbols are Object/Array/String kinds, which the default filter drops
+        Snacks.picker.lsp_symbols({ filter = { yaml = true, json = true, jsonc = true } })
       else
         Snacks.picker.treesitter()
       end
     end,
     desc = "Document symbols (outline)",
+  },
+  {
+    "<leader>A",
+    function()
+      Snacks.picker.lsp_symbols({
+        filter = {
+          default = { "Class", "Module", "Namespace", "Struct", "Interface", "Enum", "Function", "Method" },
+        },
+      })
+    end,
+    desc = "Document symbols (top-level)",
   },
 }

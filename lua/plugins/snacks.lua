@@ -5,7 +5,9 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    bigfile = { enabled = true },
+    -- default 1.5MB threshold turned multi-MB json fixtures into ft=bigfile,
+    -- killing LSP/treesitter (and <leader>a symbols)
+    -- bigfile = { enabled = true, size = 4 * 1024 * 1024 },
     dashboard = snacks_config.dashboard,
     dim = { enabled = true },
     git = { enabled = true },
